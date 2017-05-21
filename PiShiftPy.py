@@ -52,7 +52,7 @@ def get_bit(value, n):
 def write(value):
     if value.bit_length() > (8*chain):
         raise ValueError("Tried to write more bits than available")
-    for i in reversed(range(8*chain)):
+    for i in reversed(list(range(8*chain))):
         push_bit(get_bit(value, i))
     write_latch()
 
